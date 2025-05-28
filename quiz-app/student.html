@@ -8,15 +8,14 @@
 </head>
 <body>
   <div id="app">
-    <!-- Student Login -->
+  
     <div id="login-section">
       <h2>Student Login</h2>
       <input type="text" id="loginName" placeholder="Enter your name" required />
       <input type="text" id="loginId" placeholder="Enter your student ID" required />
       <button onclick="loginStudent()">Next</button>
     </div>
-
-    <!-- Student Info -->
+    
     <div id="info-section" style="display: none;">
       <h2>Student Info</h2>
       <input type="text" id="studentName" placeholder="Name" required />
@@ -35,8 +34,7 @@
       </select>
       <button onclick="startQuiz()">Start Quiz</button>
     </div>
-
-    <!-- Quiz Section -->
+    
     <div id="quiz-section" style="display: none;">
       <h2>Geology Quiz</h2>
       <div id="questionBox"></div>
@@ -44,7 +42,6 @@
       <button onclick="nextQuestion()">Next</button>
     </div>
 
-    <!-- Result Section -->
     <div id="result-section" style="display: none;">
       <h2>Quiz Result</h2>
       <p id="studentDetails"></p>
@@ -53,7 +50,7 @@
     </div>
   </div>
 
-  <script src="data.js"></script>        <!-- Shared questions -->
-  <script src="script-student.js"></script> <!-- Quiz logic -->
+  <script src="data.js"></script>       
+  <script src="script-student.js"></script>
 </body>
 </html>
