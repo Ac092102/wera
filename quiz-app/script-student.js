@@ -3,7 +3,7 @@ let currentQuestionIndex = 0;
 let score = 0;
 let questions = [];
 
-// Step 1: Login
+// Login
 function loginStudent() {
   const name = document.getElementById("loginName").value.trim();
   const id = document.getElementById("loginId").value.trim();
@@ -20,7 +20,7 @@ function loginStudent() {
   document.getElementById("studentId").value = id;
 }
 
-// Step 2: Start Quiz
+//  Start Quiz
 function startQuiz() {
   const name = document.getElementById("studentName").value.trim();
   const id = document.getElementById("studentId").value.trim();
@@ -43,7 +43,7 @@ function startQuiz() {
   showQuestion();
 }
 
-// Step 3: Show Question
+// Show Question
 function showQuestion() {
   const question = questions[currentQuestionIndex];
   document.getElementById("questionBox").textContent = `Q${currentQuestionIndex + 1}: ${question.q}`;
@@ -76,7 +76,7 @@ function selectAnswer(button, selected) {
   }
 }
 
-// Step 5: Next Question or End Quiz
+// Next Question or End Quiz
 function nextQuestion() {
   currentQuestionIndex++;
   if (currentQuestionIndex < questions.length) {
@@ -86,7 +86,7 @@ function nextQuestion() {
   }
 }
 
-// Step 6: End Quiz & Send to Backend
+// End Quiz & Send to Backend
 function endQuiz() {
   document.getElementById("quiz-section").style.display = "none";
   document.getElementById("result-section").style.display = "block";
