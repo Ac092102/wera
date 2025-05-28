@@ -1,5 +1,3 @@
-// data.js
-
 const questionBank = {
   "7": [
     { q: "What is the most common rock on Earth?", a: "Basalt", options: ["Granite", "Limestone", "Basalt", "Marble"] },
