@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin Login</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div id="app">
+    <div id="login-section">
+      <h2>Admin Login</h2>
+      <input type="password" id="adminPassword" placeholder="Enter Admin Password"/>
+      <button onclick="checkAdminLogin()">Login</button>
+      <p id="error" style="color: red;"></p>
+    </div>
+
+    <div id="admin-section" style="display: none;">
+      <h2>Admin Panel</h2>
+      <div id="results-container"></div>
+      <button onclick="clearResults()">Clear All Results</button>
+    </div>
+  </div>
+
+  <script src="script-admin.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,147 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("https://i.pinimg.com/736x/07/69/1c/07691cdb3470d9c0822edb4faad7fdc3.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+.center-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+}
+.container {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  padding: 30px 35px;
+  border-radius: 20px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  width: 90%;
+  max-width: 700px;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  transition: transform 0.3s ease;
+}
+
+.container:hover {
+  transform: scale(1.01);
+}
+
+h2 {
+  color: #2c3e50;
+  text-align: center;
+  font-size: 28px;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+}
+
+section {
+  max-width: 600px;
+  margin: 30px auto;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+section.active {
+  display: block;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px 15px;
+  margin: 12px 0 20px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+input:focus, select:focus {
+  border-color: #2196f3;
+  outline: none;
+}
+
+button {
+  padding: 12px 25px;
+  margin: 10px 5px 0 0;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #2196f3, #1e88e5);
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #1e88e5, #1565c0);
+  transform: translateY(-2px);
+}
+
+#optionsBox {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+#optionsBox button {
+  background-color: #f9f9f9;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px 15px;
+  transition: all 0.2s;
+}
+
+#optionsBox button:hover {
+  background-color: #e0e0e0;
+}
+
+.selected-option {
+  background-color: #4caf50 !important;
+  color: white !important;
+  font-weight: bold;
+  border: 2px solid #388e3c;
+  box-shadow: 0 0 8px #4caf50;
+}
+
+#questionBox {
+  font-size: 20px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+#scoreResult {
+  font-size: 22px;
+  color: #2e7d32;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 20px;
+}
+.text-box {
+  background: rgba(255, 255, 255, 0.9);
+  border-left: 6px solid #2196f3;
+  border-radius: 10px;
+  padding: 20px 25px;
+  margin: 20px 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  line-height: 1.6;
+  transition: background 0.3s ease;
+}
+
+.text-box:hover {
+  background: rgba(240, 248, 255, 0.95);
+}
