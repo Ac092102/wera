@@ -1,53 +1,35 @@
 const express = require('express');
 const cors = require('cors');
-const db = require('./db'); // This should correctly export the MySQL connection
-const app = express();
-const PORT = 3000;
+const db = require('./db');
+require('dotenv').config();
 
-// Middleware
+const app = express();
+const PORT = process.env.PORT || 3000;
+
 app.use(cors());
 app.use(express.json());
 
-// POST route to submit quiz result
 app.post('/submit', (req, res) => {
   const { name, student_id, score, total, gender } = req.body;
 
-  // Basic validation
-  if (!name || !student_id || score == null || total == null || !gender) {
-    return res.status(400).json({ error: 'Missing required fields' });
+  if (!name || !student_id || !gender || typeof score !== 'number' || typeof total !== 'number') {
+    return res.status(400).json({ message: "Invalid data" });
   }
 
-  const query = `
-    INSERT INTO submissions (name, student_id, score, total, gender)
-    VALUES (?, ?, ?, ?, ?)
-  `;
+  const query = `INSERT INTO submissions (name, student_id, score, total, gender) VALUES (?, ?, ?, ?, ?)`;
+  const values = [name, student_id, score, total, gender];
 
-  db.query(query, [name, student_id, score, total, gender], (err, result) => {
+  db.query(query, values, (err, result) => {
     if (err) {
-      console.error('Database insert error:', err);
-      return res.status(500).json({ error: 'Failed to save submission' });
+      console.error("❌ DB error:", err);
+      return res.status(500).json({ message: "Database error", error: err });
     }
-
-    res.json({ message: 'Submission saved successfully' });
+    res.json({ message: "Submission saved successfully" });
   });
 });
 
-// GET route for admin to view results
-app.get('/admin/results', (req, res) => {
-  const query = `SELECT * FROM submissions ORDER BY submitted_at DESC`;
-
-  db.query(query, (err, results) => {
-    if (err) {
-      console.error('Database select error:', err);
-      return res.status(500).json({ error: 'Failed to fetch results' });
-    }
-
-    res.json(results);
-  });
-});
-
-// Start server
 app.listen(PORT, () => {
-  console.log(`✅ Server running on http://localhost:${PORT}`);
+  console.log(`Server running on http://localhost:${PORT}`);
 });
+
 
